@@ -5,6 +5,11 @@
     left: 0;
     top: 10px;
 	background: url("../backMap.jpg") no-repeat center center fixed;
+		overflow: scroll;
+}
+
+div {
+	overflow: scroll;
 }
 
 ol, ul {
@@ -29,7 +34,6 @@ background-repeat: no-repeat;
         margin: auto;
 }
  
-/* remember to highlight inserts somehow! */
 ins {
     text-decoration: none;
 }
@@ -41,20 +45,13 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/*begin our styles*/
  
 body {
     font: 16px/1.4em 'PT Sans', sans-serif;
     color: #1c1c1c;
 }
 
-nav{
-position:fixed;
-top:0;
-}
- 
-p,
-ul {
+p,ul {
     margin: 0 0 1.5em;
 }
  
@@ -89,110 +86,7 @@ header {
     background: #1c1c1c;
     padding: 15px 20px;
 }
- 
-h1.logo a {
-    color: #d8d8d8;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 20px;
-    line-height: 22px;
-    float: left;
-    letter-spacing: 0.2em;
-}
- 
-a.to_nav {
-    float: right;
-    color: #fff;
-    background: #4e4e4e;
-    text-decoration: none;
-    padding: 0 10px;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 22px;
-    height: 22px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-}
- 
-a.to_nav:hover,
-a.to_nav:focus {
-    color: #1c1c1c;
-    background: #ccc;
-}
 
-/*navigation*/ 
-
-#primary_nav ul {
-    list-style: none;
-    background: #1c1c1c;
-    padding: 5px 0;
-}
- 
-#primary_nav li a {
-    display: block;
-    padding: 0 20px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    letter-spacing: 0.1em;
-    line-height: 2em;
-    height: 2em;
-    border-bottom: 1px solid #383838;
-}
- 
-#primary_nav li:last-child a {
-    border-bottom: none;
-}
- 
-#primary_nav li a:hover,
-#primary_nav li a:focus {
-	color: #1c1c1c;
-    background: #ccc;
-}
-
-
-@media only screen and (min-width: 768px) {
- 
-    a.to_nav {
-        display: none;
-    }
-     
-    .wrapper{
-        position: relative;
-        width: 768px;
-        margin: auto;
-    }
-     
-    #primary_nav {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        background: none;
-    }
-     
-    #primary_nav li {
-        display: inline;
-    }
-     
-    #primary_nav li a {
-        float: left;
-        border: none;
-        padding: 0 10px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-    }
- 
-}
-
-
-/* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -202,7 +96,6 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
 .button {
     background-color: #ff1a1a;
     color: white;
@@ -231,42 +124,6 @@ input[type=text], input[type=password] {
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-    opacity: 0.8;
-}
-
-/* Add padding to containers */
-.container, #lian {
-    padding: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
-} 
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#maine {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-} 
-
-.ui-icon { 
-  width: 16px; 
-  height: 16px; 
-  background-image: url(Pillbuttonred_clip_art.svg); 
 }
 
 .buttonCall {

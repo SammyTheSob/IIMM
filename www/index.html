@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="js/operationfb.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	 <script> $( "#map-canvas" ).load(readFb()); </script>
+	<script> $( "#map-canvas" ).load(readFb()); </script>
     <script>
         var config = {
             apiKey: "AIzaSyDRrNOiRQLy472LRntX6OLgnHjr1w446uc",
@@ -51,52 +51,69 @@
          </div>
             <a href="#login" class="buttonMain"><font color="white">Przejdź do aplikacji</button></font></a></p>
 			<a id="call" class="buttonCall" href="tel:112"><font color="white">Wezwij pomoc</font></a> </p>
-            </div>
         </div>
     </div>
 
     <div data-role="page" id="login" data-title="Logowanie">
+        <div class="back" align="center">
         <div data-role="header">
             <h1>Logowanie</h1>
         </div>
         <div class="container">
-            <label for="uname"><b>E-mail</b></label>
+            <label for="uname"><font size=5 color="white"><b>E-mail</b></font></label>
             <input type="text" placeholder="Enter email" id="loginL" required>
-            <label for="psw"><b>Password</b></label>
+            <br>
+            <label for="psw"><font size=5 color="white"><b>Password</b></font></label>
             <input type="password" placeholder="Enter Password" id="pswL" required>
+            <br>
             <div class="container" style="background-color:#f1f1f1">
                 <button id="log" class="button1" onclick='funL();'>Zaloguj się</button>
+                <br>
                 <a href="#register" data-role="button">Zarejestruj się</button></a>
             </div>
-            <p><a href="#map">Przejdź dalej</a></p>
+            <br>
+            <p><a href="#map"><font size =5 color="white">Przejdź dalej</font></a></p>
         </div>
     </div>
+	</div>
+	
     <div data-role="page" id="register" data-title="Rejestracja">
+        <div class="back" align="center">
         <div data-role="header">
             <h1>Rejestracja</h1>
         </div>
         <div class="container">
-            <label for="uname"><b>E-mail</b></label>
+            <label for="uname"><font size=5 color="white"><b>E-mail</b></font></label>
             <input type="text" placeholder="Enter email" id="loginR" required>
-            <label for="psw"><b>Password</b></label>
+            <br>
+            <label for="psw"><font size=5 color="white"><b>Password</b></font></label>
             <input type="password" placeholder="Enter Password" id="pswR" required>
-            <label for="psw"><b>Confirm password</b></label>
+            <br>
+            <label for="psw"><font size=5 color="white"><b>Confirm password</b></font></label>
             <input type="password" placeholder="Enter Password" id="pswRC" required>
+            <br>
             <div class="container" style="background-color:#f1f1f1">
                 <button id="reg" class="button2" onclick='funR();'>Zarejestruj się</button>
             </div>
-            <p><a href="#map">Przejdź dalej</a></p>
+            <br>
+            <p><a href="#map"><font size =5 color="white">Przejdź dalej</font></a></p>
         </div>
     </div>
-    <div data-role="page" id="map">
-	    <div data-role="header">
-            <h1>Incidents Map</h1>
+    </div>
+	
+	<div data-role="page" id="map">
+    <div class="back" align="center">
+    	<div data-role="header">
+            <h1>Mapa zdarzeń</h1>
         </div>
         <div id="map-canvas" style="width:100%;height:450px;"></div>
+
 		<div class="container" style="background-color:#f1f1f1">
 			<button id="del" class="button2" onclick='removeM();'>Usuń znacznik</button>
+			<br>
 			<label for="descr"><b>Opis</b></label>
             <input type="text" placeholder="Enter description" id="description" required>
+			<br>
 			<select id="rodzaj">
 				<option>Wypadek</option>
 				<option>Stłuczka</option>
@@ -105,7 +122,9 @@
 				<option>Zaginięcie</option>
 				<option>Morderstwo</option>
 			</select>
+			<br>
 			<button id="add" class="button2" onclick='addIncident();'>Dodaj znacznik do bazy</button>
+			<br>
 			<label>Wybierz typy zdarzeń do wyświetlenia:</label>
 			<label><input type="checkbox" id="wy">Wypadek</label>
 			<label><input type="checkbox" id="st">Stłuczka</label>
@@ -114,8 +133,10 @@
 			<label><input type="checkbox" id="za">Zaginięcie</label>
 			<label><input type="checkbox" id="mo">Morderstwo</label>
 			<button class="button" onclick='showTypes();'>OK</button>
+		</div>
         </div>
     </div>
+
 </body>
 
 </html>
