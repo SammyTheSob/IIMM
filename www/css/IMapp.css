@@ -8,10 +8,6 @@
 		overflow: scroll;
 }
 
-div {
-	overflow: scroll;
-}
-
 ol, ul {
     list-style: none;
 }
