@@ -115,8 +115,30 @@ function heat() {
 	setMapOnAll(null);
 	var map = returnMap();
     var heatmapData = [];
+	var weight = "";
+
 	for (var i = 0; i < incidents.length; i++) {
-		heatmapData.push({location: new google.maps.LatLng(incidents[i][1], incidents[i][2]), weight: 2});
+		switch(incidents[i][3]) {
+		case "Wypadek":
+			weight = 5;
+			break;
+		case "Stłuczka":
+			weight = 1;
+			break;
+		case "Kradzież":
+			weight = 2;
+			break;
+		case "Napaść":
+			weight = 3;
+			break;
+		case "Zaginięcie":
+			weight = 4;
+			break;
+		case "Morderstwo":
+			weight = 6;
+			break;
+		}
+		heatmapData.push({location: new google.maps.LatLng(incidents[i][1], incidents[i][2]), weight: weight});
 	}
 	map.setZoom(13);
 	heatmap = new google.maps.visualization.HeatmapLayer({
