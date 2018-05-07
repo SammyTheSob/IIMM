@@ -18,7 +18,7 @@
     <script type="text/javascript" src="js/operationfb.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzHB9x2HdN3Fxo1zM1gbyXxDL79swmdi4&libraries=visualization">
+    <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzHB9x2HdN3Fxo1zM1gbyXxDL79swmdi4&libraries=visualization">
     <script>
         $("#map-canvas").load(readFb());
     </script>
@@ -115,7 +115,7 @@
             <br>
             <div style="background-color:#f1f1f1">
 				Podaj datę zdarzenia: <input type="date" id="dayI">
-				Podaj przybliozną godzinę zdarzenia: <input type="time"id="timeI">
+				Podaj przybliozną godzinę zdarzenia: <input type="time" id="timeI">
                 <select id="rodzaj">
                     <option>Wypadek</option>
                     <option>Stłuczka</option>
@@ -146,8 +146,8 @@
                     <input type="checkbox" id="mo">Morderstwo</label>
                 <button class="button" onclick='showTypes();'>OK</button>
             </div>
-			<button class="button" onclick='heat();'>heat</button>
-			<button class="button" onclick='normal();'>normal</button>
+		<button class="button" onclick='heat();'>Mapa zagrożeń</button>
+		<button class="button" onclick='normal();'>Normalny widok</button>
         </div>
     </div>
 
