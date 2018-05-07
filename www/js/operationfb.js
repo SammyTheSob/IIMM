@@ -1,5 +1,4 @@
 function addIncident() {
-	alert("GG");
 	var lat = returnLat();
 	var lng  = returnLng();
 	var desc = document.getElementById('description').value;
@@ -9,10 +8,9 @@ function addIncident() {
 	var dayD = document.getElementById('dayI').value;
 	var timeD = document.getElementById('timeI').value;
 	var date = dayD + " " + timeD;
-	
-	alert(date + " " + desc + " " + userId);
 	if(desc != "") {
 		if(lat != "") {
+			if(dayD != "" && timeD != "") {
 			var r = confirm("Na pewno chcesz dodać incydent do bazy?");
 			if (r == true) {
 			txt = "You pressed OK!";
@@ -26,6 +24,9 @@ function addIncident() {
 			user: userId
 		})
 		alert("Dodano incydent do bazy");		
+		}
+		}else {
+			alert("Podaj czas zdarzenia");
 		}
 		}else {
 			alert("Brak znacznika na mapie");
