@@ -107,6 +107,36 @@ function setMapOnAll(map) {
 	}
 }
 
+var heatmap = "";
+var heatV = false;
+
+function heat() {
+	if(heatV == false) {
+	setMapOnAll(null);
+	var map = returnMap();
+    var heatmapData = [];
+	for (var i = 0; i < incidents.length; i++) {
+		heatmapData.push({location: new google.maps.LatLng(incidents[i][1], incidents[i][2]), weight: 2});
+	}
+	map.setZoom(13);
+	heatmap = new google.maps.visualization.HeatmapLayer({
+	data: heatmapData
+	});
+	heatmap.setMap(map);
+	heatV = true;
+	}
+}
+
+function normal() {
+	if(heatV == true) {
+	var map = returnMap();
+	map.setZoom(14);
+	setMapOnAll(map);
+	heatmap.setMap(null);
+	heatV = false;
+	}
+}
+
 function showTypes() {
 	setMapOnAll(null);
 	var wy = document.getElementById("wy");
