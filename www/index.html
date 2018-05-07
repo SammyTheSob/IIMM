@@ -114,8 +114,8 @@
             <button id="del" class="button2" onclick='removeM();'>Usuń znacznik</button>
             <br>
             <div style="background-color:#f1f1f1">
-                <label for="descr"><b>Opis</b></label>
-                <input type="text" placeholder="Enter description" id="description" required>
+				Podaj datę zdarzenia: <input type="date" id="dayI">
+				Podaj przybliozną godzinę zdarzenia: <input type="time"id="timeI">
                 <select id="rodzaj">
                     <option>Wypadek</option>
                     <option>Stłuczka</option>
@@ -124,6 +124,9 @@
                     <option>Zaginięcie</option>
                     <option>Morderstwo</option>
                 </select>
+				<br>
+				<label for="descr"><b>Opis</b></label>
+                <input type="text" placeholder="Enter description" id="description" required>
                 <button id="add" class="button2" onclick='addIncident();'>Dodaj znacznik do bazy</button>
             </div>
             <br>

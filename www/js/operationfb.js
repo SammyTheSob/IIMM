@@ -1,15 +1,15 @@
 function addIncident() {
+	alert("GG");
 	var lat = returnLat();
 	var lng  = returnLng();
 	var desc = document.getElementById('description').value;
 	var type = document.getElementById('rodzaj');
 	var selectedType = type.options[type.selectedIndex].text;
 	var userId = firebase.auth().currentUser.uid;
-	var date = new Date();
-	date = date.toISOString().substring(0, 10);
-	var dat = new Date();
-	var dd = dat.toISOString().substring(11, 16);
-	date = date + " " + dd;
+	var dayD = document.getElementById('dayI').value;
+	var timeD = document.getElementById('timeI').value;
+	var date = dayD + " " + timeD;
+	
 	alert(date + " " + desc + " " + userId);
 	if(desc != "") {
 		if(lat != "") {
