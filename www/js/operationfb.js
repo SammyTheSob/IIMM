@@ -13,7 +13,6 @@ function addIncident() {
 			if(dayD != "" && timeD != "") {
 			var r = confirm("Na pewno chcesz dodać incydent do bazy?");
 			if (r == true) {
-			txt = "You pressed OK!";
 			var newIncident = firebase.database().ref('app/incidents/').push();
 			newIncident.set({
 			latitude: lat,
@@ -59,7 +58,6 @@ function readFb() {
 	}). then(function(en) {
 		
 	for(j = 0; j < incidents.length; j++) {
-		//alert(incidents[j][1]);
 		var position = {
 		lat: incidents[j][1],
 		lng: incidents[j][2]
@@ -94,7 +92,7 @@ function readFb() {
     var infowindow = new google.maps.InfoWindow({content:""});
     google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-            infowindow.setContent("Data zdarzenia: " + incidents[j][4] + "<br> Opis:" + incidents[j][0]);
+            infowindow.setContent("Data zdarzenia: " + incidents[j][4] + "<br> Opis: " + incidents[j][0]);
             infowindow.open(map, marker);
         }
     })(marker, j));
@@ -142,8 +140,9 @@ function heat() {
 		heatmapData.push({location: new google.maps.LatLng(incidents[i][1], incidents[i][2]), weight: weight});
 	}
 	map.setZoom(13);
+	map.setCenter({lat: 50.062105, lng: 19.938256});
 	heatmap = new google.maps.visualization.HeatmapLayer({
-	data: heatmapData
+	data: heatmapData, radius: 20
 	});
 	heatmap.setMap(map);
 	heatV = true;

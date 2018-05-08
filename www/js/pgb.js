@@ -12,7 +12,7 @@ function onSuccess(position) {
     var langGM=position.coords.longitude;
     //Google Maps
     var myLatlng = new google.maps.LatLng(latGM,langGM);
-    var mapOptions = {zoom: 15,center: myLatlng}
+    var mapOptions = {zoom: 14, center: myLatlng}
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
 	readFb();

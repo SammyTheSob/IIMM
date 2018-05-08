@@ -6,7 +6,6 @@ function funR() {
 	var email = loginR.value;
     var pswd1 = pswR.value;
 	var pswd2 = pswRC.value;
-	alert(email + " " + pswd1 + " " + pswd2);
 	errorCode = "";
 
 	if (pswd1 != pswd2) {
