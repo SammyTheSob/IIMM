@@ -93,7 +93,7 @@ function readFb() {
     var infowindow = new google.maps.InfoWindow({content:""});
     google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-            infowindow.setContent("Data zdarzenia: " + incidents[j][4] + "<br> Opis: " + incidents[j][0]);
+            infowindow.setContent('<div style="width: 25em;">' + "Data zdarzenia: " + incidents[j][4] + "<br> Opis: " + incidents[j][0] + '</div>');
             infowindow.open(map, marker);
         }
     })(marker, j));
