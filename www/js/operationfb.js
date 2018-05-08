@@ -8,9 +8,16 @@ function addIncident() {
 	var dayD = document.getElementById('dayI').value;
 	var timeD = document.getElementById('timeI').value;
 	var date = dayD + " " + timeD;
+	var contact = "";
 	if(desc != "") {
 		if(lat != "") {
 			if(dayD != "" && timeD != "") {
+			var k = prompt("Jeśli chcesz by inni kontaktowali się z Tobą w sprawie zgłoszonego incydentu \npodaj dane kontaktowe. W innym przypadku wciśnij anuluj.", "");
+			if (k == null || k == "") {
+			contact = "brak";
+			} else {
+			contact = k;
+			} 
 			var r = confirm("Na pewno chcesz dodać incydent do bazy?");
 			if (r == true) {
 			var newIncident = firebase.database().ref('app/incidents/').push();
@@ -20,7 +27,8 @@ function addIncident() {
 			description: desc,
 			type: selectedType,
 			date: date,
-			user: userId
+			user: userId,
+			contact: contact
 		})
 		alert("Dodano incydent do bazy");	
 		readFb();
@@ -53,7 +61,7 @@ function readFb() {
 		incidents[i][3] = inc.type;
 		incidents[i][4] = inc.date;
 		incidents[i][5] = inc.user;
-
+		incidents[i][6] = inc.contact;
 		i+=1;
     });
 	}). then(function(en) {
@@ -96,7 +104,11 @@ function readFb() {
     var infowindow = new google.maps.InfoWindow({content:""});
     google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-            infowindow.setContent('<div style="width: 25em;">' + "Data zdarzenia: " + incidents[j][4] + "<br> Opis: " + incidents[j][0] + '</div>');
+			var con = "";
+			if(incidents[j][6] != null && incidents[j][6] != "brak"){
+				con = "<br> Dane kontaktowe: " + incidents[j][6];
+			}
+            infowindow.setContent('<div style="width: 25em;">' + "Data zdarzenia: " + incidents[j][4] + "<br> Opis: " + incidents[j][0] + con + '</div>');
             infowindow.open(map, marker);
         }
     })(marker, j));
