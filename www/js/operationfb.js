@@ -83,6 +83,9 @@ function readFb() {
 		case "Morderstwo":
 			pinImage = pinImageM;
 			break;
+		case "Zguba":
+			pinImage = pinImageZg;
+			break;
 } 
 		var marker = new google.maps.Marker({
         position: position,
@@ -137,6 +140,9 @@ function heat() {
 		case "Morderstwo":
 			weight = 6;
 			break;
+		case "Zguba":
+			weight = 0.5;
+			break;
 		}
 		heatmapData.push({location: new google.maps.LatLng(incidents[i][1], incidents[i][2]), weight: weight});
 	}
@@ -168,7 +174,8 @@ function showTypes() {
 	var na = document.getElementById("na");
 	var za = document.getElementById("za"); 
 	var mo = document.getElementById("mo");
-	
+	var zg = document.getElementById("zg");
+
 	for(i = 0; i < incidents.length; i++){
 		if(wy.checked) {
 		if(incidents[i][3] == "Wypadek") {
@@ -198,6 +205,11 @@ function showTypes() {
 	}
 	if(mo.checked) {
 		if(incidents[i][3] == "Morderstwo") {
+			markers[i].setMap(map);
+		}
+	}
+	if(zg.checked) {
+		if(incidents[i][3] == "Zguba") {
 			markers[i].setMap(map);
 		}
 	}
@@ -236,6 +248,12 @@ var pinImageZ = new google.maps.MarkerImage("http://chart.apis.google.com/chart?
 	
 var pinColorM = "1A1A1A"; //czarny
 var pinImageM = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColorM,
+    new google.maps.Size(21, 34),
+    new google.maps.Point(0,0),
+    new google.maps.Point(10, 34));
+	
+var pinColorZg = "4F83C6"; //niebieski
+var pinImageZg = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColorZg,
     new google.maps.Size(21, 34),
     new google.maps.Point(0,0),
     new google.maps.Point(10, 34));
