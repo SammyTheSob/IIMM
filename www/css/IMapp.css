@@ -165,7 +165,7 @@ input[type=text], input[type=password] {
 .buttonCall:before{
     content:  "\0000a0";
     display: inline-block;
-    height: 40px;
+    height: 50px;
     width: 50px;
     line-height: 24px;
     margin: -10px 0px -10px -6px;
@@ -232,4 +232,10 @@ input[type=text], input[type=password] {
     left: -5px;
     background: url("../ic_launcher.png") no-repeat left center transparent;
     background-size: 100% 100%;
+}
+
+@media(max-width: 768px) {
+    button.full-width {
+        width: 100%;  
+    }
 }

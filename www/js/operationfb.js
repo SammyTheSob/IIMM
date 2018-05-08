@@ -22,7 +22,8 @@ function addIncident() {
 			date: date,
 			user: userId
 		})
-		alert("Dodano incydent do bazy");		
+		alert("Dodano incydent do bazy");	
+		readFb();
 		}
 		}else {
 			alert("Podaj czas zdarzenia");
