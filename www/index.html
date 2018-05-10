@@ -16,12 +16,12 @@
     <script type="text/javascript" src="js/pgb.js"></script>
     <script type="text/javascript" src="js/fb.js"></script>
     <script type="text/javascript" src="js/operationfb.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzHB9x2HdN3Fxo1zM1gbyXxDL79swmdi4&libraries=visualization">
+    <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzHB9x2HdN3Fxo1zM1gbyXxDL79swmdi4&libraries=visualization"></script>
     <script>
         $("#map-canvas").load(readFb());
     </script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
     <script>
         var config = {
             apiKey: "AIzaSyDRrNOiRQLy472LRntX6OLgnHjr1w446uc",
@@ -131,6 +131,8 @@
 		<br><br>
 		<a href class="buttonW" onclick='heat();'><font color="white">Mapa zagrożeń</font></a>
 		<a href class="buttonW" onclick='normal();'><font color="white">Normalny widok</font></a>
+		<br><br>
+		<a href class="buttonN" onclick='logout();'><font color="black">Wyloguj się</font></a>
         </div>
     </div>
 

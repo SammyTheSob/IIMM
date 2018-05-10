@@ -42,3 +42,16 @@ function funL() {
 	window.location.href = "#map";
 	}});
 }
+
+function logout() {
+	errorCode = "";
+	firebase.auth().signOut().catch(function (error) {
+        errorCode = error.code;
+        var errorMessage = error.message;
+        alert("Error: " + errorMessage);
+    }). then(function(en) {
+	if (errorCode == "") {
+	alert('Wylogowałeś się');
+	window.location.href = "#main";
+	}});
+}
