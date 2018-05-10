@@ -20,9 +20,27 @@ function funR() {
         return false;
     }). then(function(en) {
 	if (errorCode == "") {
-	alert('Zarejestrowałeś się');
-    window.location.href = "#login";
+	var user = firebase.auth().currentUser;
+
+	user.sendEmailVerification().then(function() {
+	alert('Wysłano e-mail weryfikacyjny. Sprawdź swoją skrzynkę pocztową');
+	}).catch(function(error) {
+        let errorMessage = error.message;
+        alert("Error: " + errorMessage);
+	});
 	}});
+}
+
+function resetH() {
+	var loginL = document.getElementById('loginL');
+	var email = loginL.value;
+	
+	firebase.auth().sendPasswordResetEmail(email).then(function() {
+		alert("Wysłano maila umożliwiającego reset hasła");
+	}).catch(function(error) {
+        let errorMessage = error.message;
+        alert("Error: " + errorMessage);
+	});
 }
 
 function funL() {
@@ -32,6 +50,7 @@ function funL() {
 	var email = loginL.value;
     var password = pswL.value;
 	errorCode = "";
+
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         errorCode = error.code;
         var errorMessage = error.message;
