@@ -20,8 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.pkgd.min.js"></script>
 	<script>
         $("#map-canvas").load(readFb());
-		$("#myChart").load(wykres());
-		$("#bar").load(wykress());
+		$("#BarChart").load(wykres());
     </script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
     <script>
@@ -140,11 +139,9 @@
         </div>
     </div>
 
-	<div data-role="page" id="chart" data-title="Wykresy" onload="wykres()">
+	<div data-role="page" id="chart" data-title="Wykresy">
     <div class="back" align="center">
-	<canvas id="myChart" width="200" height="200"></canvas>
-	<br>
-	<div id="bar"></div>
+	<div id="BarChart"></div><br>
 	<img src="wykres.png"style="width:90%;height:90%;"><br>
 	<label for="chart"><font size=3 color="white">Wygenerowane przy użyciu Microsoft Power BI</font></label><br>
     <a href="#map" id="reg" class="buttonN"><font color="black">Powrót do mapy</font></a>
