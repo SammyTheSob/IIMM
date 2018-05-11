@@ -47,6 +47,13 @@ function addIncident() {
 
 var markers = [];
 var incidents = new Array();
+var zag = 0;
+var mor = 0;
+var zgb = 0;
+var wyp = 0;
+var nap = 0;
+var kra = 0;
+var stl = 0;
 
 function readFb() {
 	var i = 0;
@@ -75,24 +82,31 @@ function readFb() {
 		switch(incidents[j][3]) {
 		case "Wypadek":
 			pinImage = pinImageW;
+			wyp++;
 			break;
 		case "Stłuczka":
 			pinImage = pinImageS;
+			stl++;
 			break;
 		case "Kradzież":
 			pinImage = pinImageK;
+			kra++;
 			break;
 		case "Napaść":
 			pinImage = pinImageN;
+			nap++;
 			break;
 		case "Zaginięcie":
 			pinImage = pinImageZ;
+			zag++;
 			break;
 		case "Morderstwo":
 			pinImage = pinImageM;
+			mor++;
 			break;
 		case "Zguba":
 			pinImage = pinImageZg;
+			zgb++;
 			break;
 } 
 		var marker = new google.maps.Marker({
@@ -121,7 +135,9 @@ function setMapOnAll(map) {
 		markers[i].setMap(map);
 	}
 }
-
+function getI(){
+	return incidents;
+}
 var heatmap = "";
 var heatV = false;
 
