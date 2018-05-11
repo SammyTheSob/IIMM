@@ -60,9 +60,6 @@ var chart = bb.generate({
     "legend": {
         "position": "inset",
 	},
-	    "title": {
-        "text": "Ilość zgłoszeń incydentów"
-    },
   bar: {
     width: {
       ratio: 0.5

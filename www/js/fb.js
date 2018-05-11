@@ -62,6 +62,25 @@ function funL() {
 	}});
 }
 
+function goog() {
+	alert("KK");
+var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        // var token = result.credential.accessToken;
+        // var user = result.user;
+    }).catch(function (error) {
+        notify('Rejestracja za pomocą konta społecznościowego niemożliwa.');
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // var email = error.email;
+        // var credential = error.credential;
+        notify(
+`Kod błędu: ${errorCode}
+Treść błędu: ${errorMessage}`
+        );
+    });
+}
+
 function logout() {
 	errorCode = "";
 	firebase.auth().signOut().catch(function (error) {
